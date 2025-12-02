@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link for footers logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+<header>
+    <div class="logo">Luxury<span style="color:white;">Stay</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Flight.html"> Flight </a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero-slider">
+
+  <!-- Slides -->
+  <div class="slide active">
+    <img src="hp2.png" style="width:100%; height:100%;">
+  </div>
+
+  <div class="slide"
+    style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511');">
+  </div>
+
+  <div class="slide">
+    <img src="hp1.png" style="width:100%; height:100%;">
+  </div>
+
+  <div class="slide">
+    <img src="hp4.png" style="width:100%; height:100%;">
+  </div>
+
+    <div class="slide">
+    <img src="hp5.png" style="width:100%; height:100%;">
+  </div>
+
+  <div class="slide">
+    <img src="hp3.png" style="width:100%; height:100%;">
+  </div>
+    
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Text -->
+  <div class="content">
+    <h1>Welcome to our LuxuryStay</h1>
+    <p>Plan you journey with our srvices and fill harmonious peace.</p>
+    <p>Enjoy luxury, comfort and premium hotel experience in your journey.</p>
+  </div>
+
+  
+  <!-- Controls -->
+  <div class="controls">
+    <button id="prev">❮</button>
+    <button id="next">❯</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots"></div>
+
+</section>
+
+<section class="booking-panel">
+    <h2 class="panel-title">Find Your Perfect Stay</h2>
+
+    <div class="booking-box">
+
+        <!-- Destination -->
+        <div class="input-group">
+            <label>Destination</label>
+            <input type="text" placeholder="Where are you going?">
+        </div>
+
+        <!-- Check-in -->
+        <div class="input-group">
+            <label>Check-In</label>
+            <input type="date">
+        </div>
+
+        <!-- Check-out -->
+        <div class="input-group">
+            <label>Check-Out</label>
+            <input type="date">
+        </div>
+
+        <!-- Guests -->
+        <div class="input-group">
+            <label>Guests</label>
+            <select>
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5+ Guests</option>
+            </select>
+        </div>
+
+        <!-- Room Type -->
+        <div class="input-group">
+            <label>Room Type</label>
+            <select>
+                <option>Standard Room</option>
+                <option>Deluxe Room</option>
+                <option>Suite Room</option>
+                <option>Family Room</option>
+            </select>
+        </div>
+
+        <!-- Budget Slider -->
+        <div class="input-group budget-group">
+            <label>Budget Per Night (₹)</label>
+            <input type="range" id="budgetRange" min="1000" max="20000" value="6000">
+            <span class="budget-value">₹6000</span>
+        </div>
+
+        <!-- Button -->
+        <div class="input-group full">
+            <button id="searchBtn">Search Hotels</button>
+            <p id="resultText"></p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+document.getElementById("searchBtn").addEventListener("click", function () {
+    document.getElementById("resultText").innerText = "🔍 Searching hotels...";
+    alert("Search Started!");
+});
+</script>
+
+
+
+<section class="hotel-category-section">
+    <h2 class="title">Hotel Categories</h2>
+    <p class="sub-title">Find the perfect stay for every type of traveler</p>
+
+    <div class="category-grid">
+
+        <div class="category-box">
+            <i class="fa-solid fa-gem"></i>
+            <h3>Luxury Hotels</h3>
+            <p>Experience premium comfort and world-class hospitality.</p>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Business Hotels</h3>
+            <p>Perfect for meetings, events, and corporate stays.</p>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <h3>Beach Resorts</h3>
+            <p>Relax by the waves with serene ocean views.</p>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-wallet"></i>
+            <h3>Budget Hotels</h3>
+            <p>Affordable stays without compromising comfort.</p>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-house-chimney"></i>
+            <h3>Villas & Suites</h3>
+            <p>Private, spacious, and luxurious accommodations.</p>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<section class="offers-section">
+    <h2 class="title" style="margin-bottom: 70px;">Special Offers & Deals</h2>
+
+    <div class="offers-grid">
+
+        <!-- Offer 1 -->
+        <div class="offer-box">
+            <span class="offer-tag">Festive Offer</span>
+            <h3>Flat 30% Off</h3>
+            <p>Enjoy exclusive festive discounts on all premium rooms.</p>
+            <button class="offer-btn" onclick="showOfferMessage('Festive Offer')">View Offer</button>
+        </div>
+
+        <!-- Offer 2 -->
+        <div class="offer-box">
+            <span class="offer-tag">Winter Sale</span>
+            <h3>Stay 2 Nights, Get 1 Free</h3>
+            <p>A perfect winter getaway with unbeatable deals.</p>
+            <button class="offer-btn" onclick="showOfferMessage('Winter Sale')">View Offer</button>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="offer-box">
+            <span class="offer-tag">Early Bird</span>
+            <h3>Save 20% on Advance Booking</h3>
+            <p>Book early and enjoy big savings on your next trip.</p>
+            <button class="offer-btn" onclick="showOfferMessage('Early Bird')">View Offer</button>
+        </div>
+
+        <!-- Offer 4 -->
+        <div class="offer-box">
+            <span class="offer-tag">Last Minute Deal</span>
+            <h3>Up to 40% Off</h3>
+            <p>Grab limited-time discounts on same-day bookings.</p>
+            <button class="offer-btn" onclick="showOfferMessage('Last Minute Deal')">View Offer</button>
+        </div>
+
+        <!-- Offer 5 -->
+        <div class="offer-box">
+            <span class="offer-tag">Weekend Special</span>
+            <h3>Save ₹1500 on Weekend Stays</h3>
+            <p>Perfect relaxation packages for your weekend break.</p>
+            <button class="offer-btn" onclick="showOfferMessage('Weekend Special')">View Offer</button>
+        </div>
+
+        <div class="offer-box">
+          <span class="offer-tag">For long stay</span>
+          <h3>Long Stay Discount</h3>
+          <p>Stay 5 nights or more and get an exclusive 25% OFF + complimentary breakfast.</p>
+          <button class="offer-btn" onclick="showOfferMessage('Weekend Special')">View Offer</button>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function showOfferMessage(offerName) {
+    alert("You clicked on: " + offerName + " 🎉\nMore details coming soon!");
+}
+</script>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Logo + About -->
+        <div class="footer-section">
+            <h2 class="footer-logo">LuxuryStay</h2>
+            <p>Your comfort is our priority. Experience luxury & relaxation with world-class hospitality.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>📍 123 Royal Street, Mumbai, India</p>
+            <p>📞 +91 98765 43210</p>
+            <p>📧 info@luxurystay.com</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 LuxuryStay Hotel. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

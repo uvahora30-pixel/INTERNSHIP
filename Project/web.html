@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hotel Booking Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0; padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body { background:#f4f4f4; }
+
+/* HEADER */
+header{
+    width:100%;
+    position:fixed;
+    top:0; left:0;
+    background:#000000dd;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+}
+header h1{ color:#fff; }
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+}
+nav a:hover{ color:#ffcc00; }
+
+/* PAGE CONTAINER */
+.page{
+    display:none;
+    padding:100px 40px;
+    min-height:100vh;
+    animation:fade 0.4s;
+}
+@keyframes fade{
+    from{ opacity:0; }
+    to{ opacity:1; }
+}
+
+/* HOME PAGE */
+#home{
+    display:block;
+    background:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688') center/cover no-repeat;
+    text-align:center;
+    color:white;
+    padding-top:200px;
+}
+#home h2{ font-size:60px; text-shadow:2px 2px 5px black; }
+#home p{ font-size:20px; margin:15px 0; }
+button{
+    padding:12px 25px;
+    background:#ffcc00;
+    border:none;
+    font-size:18px;
+    margin-top:10px;
+    cursor:pointer;
+}
+button:hover{ background:#000; color:white; }
+
+/* CONTENT BOX */
+.box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+    max-width:900px;
+    margin:auto;
+}
+h2{ margin-bottom:15px; }
+
+/* ROOMS */
+.room{
+    margin:20px 0;
+}
+.room img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+/* SERVICES */
+.service{
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    margin:10px 0;
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+}
+
+/* CONTACT FORM */
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+    border:1px solid #bbb;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#000;
+    color:white;
+    margin-top:40px;
+}
+</style>
+
+
+<script>
+function openPage(pageName){
+    let pages = document.getElementsByClassName("page");
+    for(let i=0; i<pages.length; i++){
+        pages[i].style.display = "none";
+    }
+    document.getElementById(pageName).style.display = "block";
+    window.scrollTo(0,0);
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    <h1>Luxury Stay Hotel</h1>
+    <nav>
+        <a onclick="openPage('home')">Home</a>
+        <a onclick="openPage('about')">About</a>
+        <a onclick="openPage('rooms')">Rooms</a>
+        <a onclick="openPage('services')">Services</a>
+        <a onclick="openPage('contact')">Contact</a>
+    </nav>
+</header>
+
+
+<!-- HOME PAGE -->
+<div class="page" id="home">
+    <h2>Welcome to Luxury Stay</h2>
+    <p>Your comfort is our priority.</p>
+    <button onclick="openPage('contact')">Book Now</button>
+</div>
+
+
+<!-- ABOUT PAGE -->
+<div class="page" id="about">
+    <div class="box">
+        <h2>About Us</h2>
+        <p>
+            Luxury Stay Hotel offers premium hospitality with modern rooms,
+            world-class dining, and a peaceful atmosphere. We ensure every guest
+            enjoys a comfortable and memorable stay with exceptional service.
+        </p>
+        <p>
+            Our hotel is located in the heart of the city, close to shopping malls,
+            transport hubs and major attractions.
+        </p>
+    </div>
+</div>
+
+
+<!-- ROOMS PAGE -->
+<div class="page" id="rooms">
+    <div class="box">
+        <h2>Our Rooms</h2>
+
+        <div class="room">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+            <h3>Deluxe Room</h3>
+            <p>Comfortable king-size bed, balcony & luxury interior.</p>
+        </div>
+
+        <div class="room">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304">
+            <h3>Executive Suite</h3>
+            <p>Spacious suite with city view & premium facilities.</p>
+        </div>
+
+        <div class="room">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+            <h3>Family Room</h3>
+            <p>Perfect for families with two bedrooms and living space.</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- SERVICES PAGE -->
+<div class="page" id="services">
+    <div class="box">
+        <h2>Our Services</h2>
+
+        <div class="service">✔ Free High-Speed WiFi</div>
+        <div class="service">✔ 24/7 Room Service</div>
+        <div class="service">✔ Swimming Pool</div>
+        <div class="service">✔ Spa & Massage</div>
+        <div class="service">✔ Gym & Fitness Center</div>
+        <div class="service">✔ Airport Pickup & Drop</div>
+
+    </div>
+</div>
+
+
+<!-- CONTACT PAGE -->
+<div class="page" id="contact">
+    <div class="box">
+        <h2>Book Your Stay</h2>
+
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="date">
+        <input type="number" placeholder="Guests">
+        <textarea rows="4" placeholder="Message"></textarea>
+        <button>Submit Booking</button>
+    </div>
+</div>
+
+
+<footer>
+    © 2025 Luxury Stay Hotel | All Rights Reserved
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+
+body {
+    background-color: white;
+}
+
+.info-box{
+    margin-top: 140px;
+    width: 70%;
+    margin-left:40px;
+    background-color: white;
+    font-size: large;
+    border-radius: 5px;
+    padding:10px;
+}
+
+.gradient-text {
+
+  font-size: 40px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #001f4d, #d4af37, #001f4d);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: move 3s linear infinite;
+}
+@keyframes move {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+.animated-text{
+  font-size: 35px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #001f4d, #00eaff, #001f4d);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: move 3s linear infinite;
+}
+@keyframes move {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+    
+
+p{
+    line-height:2.4;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large
+
+}
+
+/* FLIGHT BOOKING */
+/* MAIN SECTION */
+.flight-form-section {
+    background: #ffffff;
+    padding: 50px 8%;
+}
+
+.ff-title {
+    text-align: center;
+    font-size: 32px;
+    color: #0A1A3A;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+.flight-form {
+    background: #f7f7f7;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+
+/* TRIP TYPE */
+.trip-type {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: #0A1A3A;
+}
+
+.trip-type input {
+    accent-color: #0A1A3A;
+    margin-right: 6px;
+}
+
+/* GRID */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+/* GROUP */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #0A1A3A;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0A1A3A;
+    box-shadow: 0 0 5px rgba(10,26,58,0.2);
+}
+
+/* BUTTON */
+.flight-btn {
+    width: 100%;
+    padding: 14px;
+    background: #0A1A3A;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.flight-btn:hover {
+    background: #132f60;
+}
+
+
+
+/* FLIGHT BOOKING FINISHED  */
+
+
+.faq-container {
+    max-width:700px;
+    margin-top: 100px;
+    width: 70%;
+    margin-left:40px;
+    background-color: rgb(255, 255, 251);
+    box-shadow: 0px 2px 8px rgb(188, 188, 199);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:10px;
+    margin-bottom: 100px;
+}
+
+.faq-item {
+    border-top : 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    font-size:1.1em; 
+    padding: 10px;
+    overflow:hidden;
+    cursor: pointer;
+}
+
+.faq-queston {
+    justify-content: space-between;
+    display:flex;
+}
+
+.faq-answer {
+    display: none;
+}
+
+#searchBtn {
+    background: #062a4e;
+    color: rgb(253, 253, 220);
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: large;
+}
+
+#searchBtn:hover {
+    background: #0f67c2;
+}
+
+#message {
+    text-align: center;
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+/* Title */
+.airline-partners {
+    text-align: center;
+    padding: 40px 0;
+    background: #f8f9fa;
+}
+
+.airline-partners h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Slider Box */
+.airline-slider {
+    overflow: hidden;
+    width: 100%;
+    padding: 12px 0;
+    position: relative;
+}
+
+/* Track Animation */
+.airline-track {
+    display: flex;
+    gap: 50px;
+    animation: moveSlider 25s linear infinite;
+}
+
+/* Hover Pause */
+.airline-slider:hover .airline-track {
+    animation-play-state: paused;
+}
+
+/* Single Logo Box */
+.airline-logo {
+    min-width: 180px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo Image */
+.airline-logo img {
+    width: 140px;
+    transition: 0.4s ease;
+    filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.2));
+}
+
+/* Hover Effect on Logos */
+.airline-logo img:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0px 4px 10px rgba(0, 120, 255, 0.5));
+}
+
+/* Keyframes */
+@keyframes moveSlider {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,34 @@
+Setup notes — what you must change / consider
+
+EmailJS
+
+Create an account at https://www.emailjs.com/
+ and add an email service.
+
+Create an email template with fields from_name, from_email, phone, subject, message, hotel.
+
+Replace the placeholders in two places:
+
+In contact.html: emailjs.init("YOUR_USER_ID"); → replace YOUR_USER_ID with your EmailJS user/public key.
+
+In scripts.js: EMAILJS_SERVICE_ID and EMAILJS_TEMPLATE_ID → replace with your service & template IDs.
+
+Font Awesome
+
+I included CDN link — if you prefer, swap to a local version.
+
+Google Map
+
+The included iframe is a public embed (works without API key). If you want a custom map with advanced styling or Places, use Google Maps Platform and replace iframe with the Maps JS API.
+
+WhatsApp number
+
+The href on the WhatsApp button uses wa.me/919876543210 — change the phone to your hotel's WhatsApp number (in international format, no + or leading zeros).
+
+Dark mode & accessibility
+
+Dark mode preference is saved in localStorage (key rg_darkmode). Keyboard accessible modal; focus outlines kept.
+
+Deployment
+
+Place all three files in the same folder and open contact.html. Or integrate into your site layout.

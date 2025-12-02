@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+        .header, .footer {text-align: center;}
+        .header {background-color: rgb(179, 177, 177); padding:5px; margin-bottom: 10px;}
+        .main {background-color: rgb(248, 248, 183);}
+        .aside {background-color: rgb(159, 201, 159);}
+        .footer {background-color: rgb(217, 233, 248); padding:15px; margin-top: 10px;}
+        h2,p {margin-left: 10px;}
+</style>
+</head>
+<body>
+<header class="header">
+<h1> Mt Semantic Website </h1> 
+<nav>  <a href="#">Home</a> |
+       <a href="#">Projects</a> |
+       <a href="#">Contact</a>
+</nav>
+</header>
+
+<div style="display: flex;">
+
+<main class="main" style="flex: 3;">
+   <section> <article> 
+             <h2> About Semantic HTML </h2>
+             <p> Semantic HTML gives meaning to your content. </p>
+    </article> </section>
+</main>
+
+<aside class="aside" style="flex: 1;">
+    <h2> Sidebar Info </h2>
+    <p> Extra content or related links go here. </p>
+</aside> 
+
+</div> 
+
+<footer class="footer">
+<h3> &copy; 2025 My semantic Website </h3>
+</footer>
+</body>
+</html>

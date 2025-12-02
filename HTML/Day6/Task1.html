@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+th,td {text-align: left;}   
+table { background-color: rgb(255, 255, 255); margin-top: 60px; border-radius: 20px;} 
+</style>    
+</head>
+<body style="background-color: rgb(211, 240, 250);">
+<form action="/Register" method="post"> 
+<table cellpadding = "7" align="center" width="500" style="box-shadow: 50px;">
+<tr>
+<td colspan="2"> <h1 style="text-align: center;"> Student Registration Form </h1> </td>
+</tr>
+<tr>
+<th> <label>Full Name :</label> </th>
+<td> <input type="text" name ="FN" placeholder="Enter your Name" required> </td>
+</tr>
+<tr>
+<th> <label> E-mail : </label> </th>
+<td> <input type="email" name="em" placeholder="Enter your E-mail" required></td>    
+</tr>
+<tr>
+<th> <label for ="gender"> Gender : </label> </th>
+<td> <input type="radio" name ="r" required> Male <input type="radio" name ="r" required> Female  </td>  
+</tr>
+<tr>
+<th> <label for = "skills"> Skills : </label> </th>
+<td> <input type="checkbox" name = "cb"> HTML <input type="checkbox" name = "cb"> CSS <input type="checkbox" name = "cb"> JS  </td>
+</tr>
+<tr>
+<th> <label> Course : </label> </th>
+<td> <select name="course">
+             <option value ="Frontend"> Frontend </option>
+             <option value="Backend"> Backend </option>
+     </select></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;"> <input type="submit" name="Register"  value="Register">  </td>
+</tr>
+</table>   
+</form>
+</body>
+</html>

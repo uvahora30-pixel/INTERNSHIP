@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Text</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .neon {
+      font-size: 60px;
+      color: #fff;
+      text-shadow:
+        0 0 5px #00e6e6,
+        0 0 10px #00e6e6,
+        0 0 20px #00cccc,
+        0 0 40px #00cccc;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from {
+        text-shadow:
+          0 0 5px #00e6e6,
+          0 0 10px #00e6e6,
+          0 0 20px #00cccc,
+          0 0 40px #00cccc;
+      }
+      to {
+        text-shadow:
+          0 0 2px #00e6e6,
+          0 0 5px #00e6e6,
+          0 0 10px #00cccc,
+          0 0 20px #00cccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="neon">Neon Nights</h1>
+</body>
+</html>

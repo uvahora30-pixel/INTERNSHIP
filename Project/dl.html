@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Mode Example</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* -------------------------------------------------- */
+/* LIGHT MODE VARIABLES */
+/* -------------------------------------------------- */
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0a79df;
+  --accent-dark: #005bbb;
+  --shadow: 0 8px 24px rgba(2,6,23,0.06);
+  --radius: 12px;
+  --glass: rgba(255,255,255,0.7);
+  --success: #16a34a;
+  --text: #0b1220;
+}
+
+/* -------------------------------------------------- */
+/* DARK MODE VARIABLES */
+/* -------------------------------------------------- */
+:root.dark {
+  --bg: #0b1020;
+  --card: #0f1724;
+  --muted: #9aa4b2;
+  --accent: #3b82f6;
+  --accent-dark: #2563eb;
+  --glass: rgba(255,255,255,0.03);
+  --text: #dbe1ec;
+}
+
+/* -------------------------------------------------- */
+/* GLOBAL STYLES */
+/* -------------------------------------------------- */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg), var(--card));
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  line-height:1.45;
+  transition: 0.35s ease;
+}
+
+/* -------------------------------------------------- */
+/* FLOATING DARK MODE BUTTON */
+/* -------------------------------------------------- */
+.top-controls {
+  position: fixed;
+  top: 120px;
+  right: 18px;
+  z-index: 1800;
+}
+
+.control-btn{
+  background: var(--card);
+  border: none;
+  padding:8px 10px;
+  border-radius:999px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition: 0.3s;
+}
+
+.control-btn i{
+  font-size:16px;
+  color:var(--muted);
+}
+
+/* ICON SWITCHING */
+.fa-sun { display: none; }
+
+:root.dark .fa-moon {
+  display: none;
+}
+:root.dark .fa-sun {
+  display: inline-block;
+}
+
+</style>
+</head>
+<body>
+
+<!-- -------------------------------------------------- -->
+<!-- TOP FLOATING THEME TOGGLE BUTTON -->
+<!-- -------------------------------------------------- -->
+<div class="top-controls">
+  <button id="darkToggle" class="control-btn" aria-label="Toggle Dark Mode">
+    <i class="fa-regular fa-moon"></i>
+    <i class="fa-solid fa-sun"></i>
+  </button>
+</div>
+
+<!-- DEMO CONTENT -->
+<h1 style="padding:40px;">Dark / Light Mode is Working!</h1>
+
+
+<script>
+/* -------------------------------------------------- */
+/* DARK MODE JS LOGIC */
+/* -------------------------------------------------- */
+
+const toggle = document.getElementById("darkToggle");
+
+// Load saved mode
+if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark");
+}
+
+// On click toggle theme
+toggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+
+    if (document.documentElement.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us - Royal Grand Hotel</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Xx..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="contact_style.css" />
+
+
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS (replace 'YOUR_USER_ID' with your actual EmailJS user id)
+    (function(){
+      emailjs.init("YOUR_USER_ID");
+    })();
+  </script>
+</head>
+<body>
+
+
+<header class="main-page-header">
+    <div class="logo">Luxury<span style="color:white;">Stay</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Flight.html"> Flight </a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="contact_us_page" style="margin-top: 150px;">
+
+  <!-- Top floating dark-mode toggle -->
+  <div class="top-controls">
+    <button id="darkToggle" class="control-btn" aria-label="Toggle dark mode">
+      <i class="fa-regular fa-moon"></i>
+      <i class="fa-solid fa-sun hidden"></i>
+    </button>
+  </div>
+
+  <main class="container">
+    <header class="page-header fade-in">
+      <h1>Contact Us</h1>
+      <p>Questions about reservations or facilities? We're here 24/7.</p>
+    </header>
+
+    <section class="grid contact-grid">
+      <!-- Contact Info -->
+      <aside class="card slide-up delay-1 contact-info">
+        <h2><i class="fa-solid fa-hotel"></i> Hotel Information</h2>
+
+        <div class="info-row">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Address</strong>
+            <p> LuxuryStay, MG Road, Ahmedabad, India</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Phone</strong>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <p>support@royalgrand.com</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <i class="fa-regular fa-clock"></i>
+          <div>
+            <strong>Hours</strong>
+            <p>Open 24/7</p>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <a href="#contactForm" class="btn-light"><i class="fa-solid fa-paper-plane"></i> Send a message</a>
+          <a href="tel:+919876543210" class="btn-light outline"><i class="fa-solid fa-phone"></i> Call Now</a>
+        </div>
+      </aside>
+
+      <!-- Contact Form -->
+      <section class="card slide-up delay-2 contact-form">
+        <h2><i class="fa-solid fa-paper-plane"></i> Send Us a Message</h2>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Full name" required />
+            <small class="err" id="err-name"></small>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <small class="err" id="err-email"></small>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Reservation, Facilities, Events..." required />
+            <small class="err" id="err-subject"></small>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+            <small class="err" id="err-message"></small>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+            <button type="reset" class="btn-light outline">Reset</button>
+          </div>
+
+          <input type="hidden" name="hotel" value="Royal Grand Hotel" />
+        </form>
+
+        <div class="help-text">
+          <p><i class="fa-solid fa-circle-info"></i> We'll respond within 24 hours. For urgent booking help call us.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- Stylish Map -->
+    <section class="map-section fade-in delay-3">
+      <h2>Find Us Here</h2>
+      <div class="map-card">
+        <!-- Using embed iframe; replace src with your custom Google Maps link if you want -->
+   <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120658.74477566245!2d72.7631362390625!3d18.922040000000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1bd1e0b9e81%3A0xe4df231e1f87f78!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1701246220000!5m2!1sen!2sin"  
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+</iframe>
+
+
+        <div class="map-overlay">
+          <div>
+            <strong>Royal Grand Hotel</strong>
+            <p>MG Road, Ahmedabad — 2.3 km from city center</p>
+          </div>
+          <a class="btn-light" href="https://www.google.com/maps/dir/?api=1&destination=MG+Road+Ahmedabad" target="_blank" rel="noopener">
+            <i class="fa-solid fa-directions"></i> Get Directions
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- WhatsApp Floating Button -->
+  <a id="whatsappBtn" class="whatsapp-float" href="https://wa.me/919876543210?text=Hello%20Royal%20Grand%20Hotel%20Team" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-text">Chat</span>
+  </a>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content slide-down">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal-body">
+        <i class="fa-solid fa-circle-check fa-3x success-icon"></i>
+        <h3 id="modalTitle">Message Sent</h3>
+        <p>Thank you! Your message has been received. We'll reply shortly.</p>
+        <button id="modalOk" class="btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Logo + About -->
+        <div class="footer-section">
+            <h2 class="footer-logo">LuxuryStay</h2>
+            <p>Your comfort is our priority. Experience luxury & relaxation with world-class hospitality.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>📍 123 Royal Street, Mumbai, India</p>
+            <p>📞 +91 98765 43210</p>
+            <p>📧 info@luxurystay.com</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 LuxuryStay Hotel. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+
+
+
+  <!-- Page JavaScript -->
+  <script src="contact_script.js"></script>
+</body>
+</html>

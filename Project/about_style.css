@@ -1,0 +1,226 @@
+/* General Styles */
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background:#f8f9fc;
+  color:#0a1a33;
+}
+.section{
+  padding:60px 10%;
+  text-align:center;
+}
+h2{ font-size:32px; margin-bottom:20px; color:#0a1a33; }
+
+/* HERO */
+.hero{
+  height:80vh;
+  background:url('building.png') center/cover no-repeat;
+  display:flex;
+  align-items:top;
+  justify-content:right;
+  color:#fff;
+  text-shadow:0 4px 12px rgba(0,0,0,0.6);
+  margin-top: 140px;
+  background-color: #0a4fa3;
+}
+.hero-content h1{ font-size:48px; margin:0; color: rgb(255, 255, 189); margin-top: 20px; margin-right: 20px;}
+.hero-content p{ font-size:18px; margin-top:10px; color: #fff; font-weight: bold;}
+
+/* STORY */
+.story p{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  color:#444;
+}
+
+/* FEATURES */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+.feature{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+.feature i{
+  font-size:30px;
+  color:#0a4fa3;
+  margin-bottom:10px;
+}
+
+.feature {
+    transition: 0.4s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* WHY CHOOSE */
+ul{ max-width:600px; margin:auto; text-align:left; }
+ul li{
+  margin:10px 0;
+  font-size:18px;
+}
+
+/* AWARDS */
+.award-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+.award-box{
+  background:#0a1a33;
+  color:white;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* GALLERY */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+.gallery-grid img{
+  width:100%; height:220px; object-fit:cover; border-radius:10px;
+}
+
+/* TEAM */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+.member img{
+  width:150px; height:150px; border-radius:50%; object-fit:cover;
+}
+
+/* TESTIMONIALS */
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+.test-card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* FAQ */
+.faq-box{
+  max-width:600px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* MAP */
+.map iframe{
+  width:100%;
+  height:350px;
+  border-radius:10px;
+  border:0;
+}
+
+.map-container{
+    width: 70%;
+    text-align: center;
+}
+
+/* CONTACT */
+.contact p{
+  font-size:18px;
+  margin-top:10px;
+}
+
+
+/* ECO SECTION */
+.eco p{ max-width:700px; margin:auto; font-size:18px; color:#444; }
+.eco-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+margin-top:25px;
+}
+.eco-box{
+background:#0a1a33;
+color:white;
+padding:20px;
+border-radius:10px;
+}
+
+
+/* STATS SECTION */
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+margin-top:20px;
+}
+.stat{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.stat h3{ font-size:32px; margin-bottom:8px; color:#0a4fa3; }
+
+
+/* VIDEO SECTION */
+.video-box{
+max-width:800px;
+margin:auto;
+margin-top:20px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+/* NEARBY ATTRACTIONS */
+.nearby-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:20px;
+}
+.spot{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.spot h4{ margin:0 0 8px; color:#0a4fa3; }
+
+
+/* HOSPITALITY PROMISE */
+.promise p{ max-width:700px; margin:auto; font-size:18px; color:#444; }
+.promise-list{
+max-width:600px;
+margin:25px auto 0;
+text-align:left;
+}
+.promise-list li{
+margin:10px 0;
+font-size:18px;
+}
+
+
+
+
+

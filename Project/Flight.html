@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+         
+     <!-- link for footers logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="Flight_Style.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Luxury<span style="color:white;">Stay</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Flight.html"> Flight </a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<div class="info-box">
+<h1 class="gradient-text" style="text-align: left;"> Why Choose Our Flight Service?</h1>
+
+<p> we make your journey smoother by offering convenient flight assistance. Our team can help you find the best flights, 
+track real-time arrivals and departures, and arrange comfortable airport transfers. Travel with confidence from takeoff to check-in.</p>
+<br> <br>
+
+
+<h2 class="animated-text"> What We Provide </h2>
+<br> 
+<p> 1. Flight Booking Support : Find the best routes and airline options.</p>
+<p> 2. Real-Time Flight Updates : Stay informed about arrivals and departures. </p>
+<p> 3. Airport Transfers : Comfortable rides to and from the airport. </p>
+<p> 4. Travel Guidance : Help with baggage rules, layovers, and special requests. </p>
+<br>
+
+<p> <strong style="color: rgb(40, 40, 97);">  goal is to make your journey seamless from the moment you leave home until you reach our doors. </strong> </p>
+<br>
+
+<p> ✔   Best flight deals</p>
+<p> ✔   Instant booking confirmation</p>
+<p> ✔   24/7 customer support</p>
+<p> ✔  Saves you time </p>
+<p> ✔   Reliable travel coordination </p>
+<p> ✔  Trusted airline connections </p>
+<p> ✔  Stress-free booking experience </p>
+</div>
+
+<div class="faq-container">
+
+<h3> This are some frequentl asked question you can clearify here with our short and clear desctiption.  </h3>
+<br> <br>
+    <div class="faq-item"> 
+         <div class="faq-question"> How do I find the cheapest flights on Booking.com? <span> ▶ </span> </div>
+         <div class="faq-answer"> You can sort flights by price to see them from cheapest to most expensive. To find the cheapest flights, you also need to consider factors such as when you are booking, when you want to travel, and which type of flight class you want select. </div>
+    </div>
+
+    <div class="faq-item"> 
+         <div class="faq-question"> Can I book one way flight tickets on Booking.com? <span> ▶ </span> </div> 
+         <div class="faq-answer"> Yes, you can book one way, round trip and multi city flights on our site. </div>
+    </div>
+
+      <div class="faq-item"> 
+         <div class="faq-question"> How far in advance can I book a flight? <span> ▶ </span> </div> 
+         <div class="faq-answer"> You can book a flight up to one year before your departure date.</div>
+    </div>
+
+    <div class="faq-item"> 
+         <div class="faq-question"> Do flights get cheaper closer to departure? <span> ▶ </span> </div> 
+         <div class="faq-answer"> Generally, flight prices are more likely to increase the closer you get to your flight date.</div>
+    </div>
+
+     <div class="faq-item"> 
+         <div class="faq-question"> What is a flexible ticket? <span> ▶ </span> </div> 
+         <div class="faq-answer"> A flexible ticket allows you to change your flight with the same airline company by only paying the fare and tax difference. It can only be used for one confirmed change. You are able to add the flexible ticket when booking your flight.</div>
+    </div>
+
+    <div class="faq-item" style="border-bottom: 1px solid black; padding:10px"> 
+         <div class="faq-question"> Does Booking.com charge credit card fees? <span> ▶ </span> </div> 
+         <div class="faq-answer"> No, we don't charge any credit card fees. You can always see exactly what yo're paying for in the price breakdown when you review your booking.</div>
+    </div>
+
+
+</div>
+
+
+
+<section class="flight-form-section">
+    <h2 class="ff-title">Flight Booking</h2>
+
+    <form class="flight-form" id="flightForm">
+
+        <!-- Trip Type -->
+        <div class="trip-type">
+            <label>
+                <input type="radio" name="trip" value="oneway" checked>
+                One Way
+            </label>
+
+            <label>
+                <input type="radio" name="trip" value="round">
+                Round Trip
+            </label>
+
+            <label>
+                <input type="radio" name="trip" value="multi">
+                Multi City
+            </label>
+        </div>
+
+        <!-- Inputs Grid -->
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>From</label>
+                <input type="text" placeholder="Enter departure city">
+            </div>
+
+            <div class="form-group">
+                <label>To</label>
+                <input type="text" placeholder="Enter destination city">
+            </div>
+
+            <div class="form-group">
+                <label>Departure Date</label>
+                <input type="date">
+            </div>
+
+            <div class="form-group return-date">
+                <label>Return Date</label>
+                <input type="date">
+            </div>
+
+            <div class="form-group">
+                <label>Passengers</label>
+                <select>
+                    <option>1 Adult</option>
+                    <option>2 Adults</option>
+                    <option>3 Adults</option>
+                    <option>Family Pack</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Class</label>
+                <select>
+                    <option>Economy</option>
+                    <option>Premium Economy</option>
+                    <option>Business</option>
+                    <option>First Class</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button type="submit" class="flight-btn">Search Flights</button>
+    </form>
+</section>
+
+<script>
+document.getElementById("flightForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Searching Flights...");
+});
+</script>
+
+
+
+
+
+
+
+
+<section class="airline-partners">
+    <h2>Airline Partners</h2>
+
+    <div class="airline-slider">
+        <div class="airline-track">
+
+            <!-- Original List -->
+            <div class="airline-logo"><img src="f_airindia.png"></div>
+            <div class="airline-logo"><img src="f_gofirst.png"></div>
+            <div class="airline-logo"><img src="f_indigo.png"></div>
+            <div class="airline-logo"><img src="f_spicejet.png"></div>
+            <div class="airline-logo"><img src="f_vistra.png"></div>
+
+            <!-- Duplicated for Infinite Loop -->
+            <div class="airline-logo"><img src="f_airindia.png"></div>
+            <div class="airline-logo"><img src="f_gofirst.png"></div>
+            <div class="airline-logo"><img src="f_indigo.png"></div>
+            <div class="airline-logo"><img src="f_spicejet.png"></div>
+            <div class="airline-logo"><img src="f_vistra.png"></div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+ <footer class="footer">
+    <div class="footer-container">
+
+        <!-- Logo + About -->
+        <div class="footer-section">
+            <h2 class="footer-logo">LuxuryStay</h2>
+            <p>Your comfort is our priority. Experience luxury & relaxation with world-class hospitality.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>📍 123 Royal Street, Mumbai, India</p>
+            <p>📞 +91 98765 43210</p>
+            <p>📧 info@luxurystay.com</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 LuxuryStay Hotel. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<script src="Flight_Script.js"></script>
+
+</body>
+</html>

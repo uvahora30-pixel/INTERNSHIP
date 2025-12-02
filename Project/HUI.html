@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boutique Stay — Hotel Booking UI (Static)</title>
+  <style>
+    /* --- Basic Reset --- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1f2937;background:#f7fafc}
+    a{color:inherit;text-decoration:none}
+
+    /* --- Layout --- */
+    header{background:linear-gradient(90deg,#0ea5a4, #3b82f6);color:white;padding:24px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    nav{display:flex;gap:12px;align-items:center}
+    .logo{font-weight:700;font-size:1.25rem}
+    .nav-links{margin-left:auto;display:flex;gap:12px}
+    .nav-links a{padding:8px 12px;border-radius:8px;opacity:.95}
+    .nav-links a:hover{background:rgba(255,255,255,.12)}
+
+    /* --- Hero --- */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+    .hero-card{background:rgba(255,255,255,.12);padding:22px;border-radius:12px}
+    .hero h1{font-size:2rem;margin-bottom:8px}
+    .hero p{color:rgba(255,255,255,.9)}
+
+    /* --- Quick Search --- */
+    .search-card{background:white;padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,.08)}
+    .search-row{display:flex;gap:10px;margin-bottom:8px}
+    .search-row input,.search-row select{flex:1;padding:10px;border:1px solid #e6e9ee;border-radius:8px}
+    .btn{background:#0ea5a4;color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+
+    /* --- Sections --- */
+    section{padding:36px 0}
+    h2.section-title{font-size:1.2rem;margin-bottom:12px}
+
+    /* --- Rooms grid & filters --- */
+    .rooms-layout{display:grid;grid-template-columns:300px 1fr;gap:20px}
+    .filters{background:white;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+    .filter-row{margin-bottom:12px}
+    .rooms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+
+    .room-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,.06);display:flex;flex-direction:column}
+    .room-media{position:relative;height:160px}
+    .room-media img{width:100%;height:100%;object-fit:cover}
+    .room-body{padding:12px;flex:1;display:flex;flex-direction:column}
+    .room-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .price{font-weight:700}
+    .features{font-size:.9rem;color:#475569}
+    .room-actions{display:flex;gap:8px;margin-top:12px}
+    .btn-outline{padding:8px 10px;border-radius:8px;border:1px solid #cbd5e1;background:white;cursor:pointer}
+
+    /* --- Image slider small --- */
+    .thumbs{display:flex;gap:6px;margin-top:8px}
+    .thumbs img{width:48px;height:32px;object-fit:cover;border-radius:6px;cursor:pointer}
+
+    /* --- Availability teaser --- */
+    .teaser{background:#fff7ed;border-left:4px solid #f97316;padding:12px;border-radius:8px;margin-bottom:14px}
+
+    /* --- Amenities grid --- */
+    .amenities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+    .amenity{background:white;padding:12px;border-radius:10px;box-shadow:0 4px 10px rgba(2,6,23,.04);display:flex;gap:10px;align-items:center}
+
+    /* --- Gallery --- */
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .gallery-grid img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+    /* --- Contact --- */
+    .contact-card{background:white;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+    .form-row{margin-bottom:10px}
+    input[type="range"]{width:100%}
+
+    /* --- Footer --- */
+    footer{padding:22px 0;color:#475569}
+
+    /* --- Modal --- */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,.4);display:none;align-items:center;justify-content:center}
+    .modal{background:white;padding:20px;border-radius:10px;width:520px;max-width:94%}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .rooms-layout{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Boutique Stay</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#rooms">Rooms</a>
+          <a href="#amenities">Amenities</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HOME -->
+    <section id="home">
+      <div class="hero">
+        <div>
+          <div class="hero-card">
+            <h1>Comfort with character</h1>
+            <p>Charming boutique rooms, handcrafted breakfasts, and a quiet garden terrace. Book a stay, or send an enquiry — perfect for weekend getaways.</p>
+            <p style="margin-top:12px;font-size:.95rem;color:#0ea5a4;font-weight:600">Free cancellation · Complimentary breakfast</p>
+          </div>
+          <div style="margin-top:14px;display:flex;gap:12px">
+            <div style="flex:1;background:white;padding:14px;border-radius:10px;box-shadow:0 8px 24px rgba(2,6,23,.06)">
+              <h3 style="margin-bottom:8px">Why book with us</h3>
+              <ul style="color:#475569;list-style:disc;margin-left:20px">
+                <li>Curated local experiences</li>
+                <li>Handmade toiletries</li>
+                <li>Personalised check-in</li>
+              </ul>
+            </div>
+            <div style="width:220px;align-self:stretch;background:linear-gradient(180deg,#fff,#f1f5f9);padding:14px;border-radius:10px;display:flex;flex-direction:column;justify-content:center">
+              <div style="font-size:.9rem;color:#334155">Open dates</div>
+              <div style="font-weight:700;font-size:1.3rem;margin-top:6px">Nov 27–30</div>
+              <div style="font-size:.9rem;color:#64748b;margin-top:6px">Early-bird rates available</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick search / booking teaser -->
+        <aside class="search-card">
+          <div style="font-weight:700;margin-bottom:8px">Find your room</div>
+          <div class="search-row">
+            <input type="date" id="checkin" />
+            <input type="date" id="checkout" />
+          </div>
+          <div class="search-row">
+            <select id="guests"><option>1 guest</option><option>2 guests</option><option>3 guests</option></select>
+            <button class="btn" id="searchBtn">Search</button>
+          </div>
+          <div style="margin-top:8px;font-size:.9rem;color:#475569">Need help? <a href="#contact">Send an enquiry</a></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ROOMS -->
+    <section id="rooms">
+      <h2 class="section-title">Rooms & rates</h2>
+      <div class="teaser">Only 2 rooms left at this price for selected dates — book soon or send an enquiry.</div>
+      <div class="rooms-layout">
+        <aside class="filters">
+          <h3 style="margin-bottom:8px">Filters</h3>
+          <div class="filter-row">
+            <label>Beds</label>
+            <select id="filterBeds" style="width:100%;padding:8px;border-radius:8px;margin-top:6px;border:1px solid #e6e9ee">
+              <option value="any">Any</option>
+              <option value="1">1 bed</option>
+              <option value="2">2 beds</option>
+            </select>
+          </div>
+          <div class="filter-row">
+            <label>Max price (₹)</label>
+            <input type="range" id="filterPrice" min="2000" max="12000" step="500" value="8000" />
+            <div style="margin-top:6px">Up to <strong id="priceVal">₹8000</strong></div>
+          </div>
+          <div class="filter-row">
+            <label>Room type</label>
+            <select id="filterType" style="width:100%;padding:8px;border-radius:8px;margin-top:6px;border:1px solid #e6e9ee">
+              <option value="any">Any</option>
+              <option value="deluxe">Deluxe</option>
+              <option value="suite">Suite</option>
+              <option value="standard">Standard</option>
+            </select>
+          </div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" id="applyFilters">Apply</button>
+            <button class="btn-outline" id="resetFilters">Reset</button>
+          </div>
+        </aside>
+
+        <div>
+          <div style="margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:700">Available rooms</div>
+            <div style="color:#475569">Showing <span id="roomsCount">—</span> options</div>
+          </div>
+
+          <div class="rooms-grid" id="roomsGrid">
+            <!-- Room cards are inserted by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMENITIES -->
+    <section id="amenities">
+      <h2 class="section-title">Amenities</h2>
+      <div class="amenities-grid">
+        <div class="amenity"><div>🛏️</div><div><strong>Daily housekeeping</strong><div style="font-size:.9rem;color:#64748b">Fresh linens & turndown</div></div></div>
+        <div class="amenity"><div>🍳</div><div><strong>Complimentary breakfast</strong><div style="font-size:.9rem;color:#64748b">Locally sourced ingredients</div></div></div>
+        <div class="amenity"><div>☕</div><div><strong>24/7 beverage station</strong><div style="font-size:.9rem;color:#64748b">Tea, coffee & snacks</div></div></div>
+        <div class="amenity"><div>🚲</div><div><strong>Bike rentals</strong><div style="font-size:.9rem;color:#64748b">Explore nearby trails</div></div></div>
+        <div class="amenity"><div>📶</div><div><strong>High speed Wi‑Fi</strong><div style="font-size:.9rem;color:#64748b">Free in all areas</div></div></div>
+        <div class="amenity"><div>🧴</div><div><strong>Artisan toiletries</strong><div style="font-size:.9rem;color:#64748b">Eco-friendly & refillable</div></div></div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-grid">
+        <img src="img_1.jpg" alt="gallery">
+        <img src="https://images.unsplash.com/photo-1505691723518-36a3f4a8e8b4?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="gallery">
+        <img src="https://images.unsplash.com/photo-1505691723518-36a3f4a8e8b5?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="gallery">
+        <img src="https://images.unsplash.com/photo-1473215234927-74a9d2f40b46?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="gallery">
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact & enquiries</h2>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start">
+        <div class="contact-card">
+          <form id="contactForm">
+            <div class="form-row">
+              <label>Name</label>
+              <input type="text" required id="cname" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee;margin-top:6px" />
+            </div>
+            <div class="form-row">
+              <label>Email</label>
+              <input type="email" required id="cemail" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee;margin-top:6px" />
+            </div>
+            <div class="form-row">
+              <label>Message</label>
+              <textarea id="cmessage" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee;margin-top:6px"></textarea>
+            </div>
+            <div style="display:flex;gap:8px"><button class="btn" type="submit">Send enquiry</button><button class="btn-outline" type="button" id="clearContact">Clear</button></div>
+          </form>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:12px">
+          <div class="contact-card">
+            <strong>Where we are</strong>
+            <div style="margin-top:8px;color:#475569">123 Garden Lane, Old Town — approx 10 min walk to the market.</div>
+            <div style="margin-top:8px">Phone: +91 98765 43210</div>
+          </div>
+          <div class="contact-card">
+            <strong>Availability teaser</strong>
+            <div style="margin-top:8px;color:#475569">Check dates in the top search to see live availability. Or send an enquiry — we'll reply within 24 hours.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px">
+      <div>© Boutique Stay — All rights reserved</div>
+      <div style="color:#64748b">Designed for interns — static UI demo</div>
+    </div>
+  </footer>
+
+  <!-- Booking modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h3>Booking enquiry</h3>
+      <form id="bookingForm">
+        <div style="margin-top:8px"><label>Room</label><div id="bookRoomName" style="font-weight:700;margin-top:4px">—</div></div>
+        <div style="margin-top:8px" class="form-row"><label>Your name</label><input type="text" required id="bname" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ee;margin-top:6px"></div>
+        <div class="form-row"><label>Contact email</label><input type="email" required id="bemail" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ee;margin-top:6px"></div>
+        <div class="form-row"><label>Notes</label><textarea id="bnotes" rows="3" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ee;margin-top:6px"></textarea></div>
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+          <button type="button" class="btn-outline" id="cancelBooking">Cancel</button>
+          <button class="btn" type="submit">Send enquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    /* ------- Sample data for rooms (would normally come from an API) ------- */
+    const ROOMS = [
+      {id:1,name:'Garden Deluxe',type:'deluxe',beds:1,price:4500,images:[
+        'https://images.unsplash.com/photo-1505691723518-36a3f4a8e8b4?q=60&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1501117716987-c8e47e15ea82?q=60&w=1200&auto=format&fit=crop'
+      ],desc:'Cozy room with courtyard view.'},
+      {id:2,name:'Corner Suite',type:'suite',beds:2,price:9800,images:[
+        'https://images.unsplash.com/photo-1505691723518-36a3f4a8e8b5?q=60&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1473215234927-74a9d2f40b46?q=60&w=1200&auto=format&fit=crop'
+      ],desc:'Spacious suite with lounge area.'},
+      {id:3,name:'Standard Room',type:'standard',beds:1,price:3200,images:[
+        'https://images.unsplash.com/photo-1505691723518-36a3f4a8e8b6?q=60&w=1200&auto=format&fit=crop'
+      ],desc:'Simple, clean and bright.'},
+      {id:4,name:'Rooftop Double',type:'deluxe',beds:2,price:7600,images:[
+        'https://images.unsplash.com/photo-1505691723518-36a3f4a8e8b7?q=60&w=1200&auto=format&fit=crop'
+      ],desc:'Great city views from the rooftop.'},
+      {id:5,name:'Family Suite',type:'suite',beds:2,price:11500,images:[
+        'https://images.unsplash.com/photo-1505691723518-36a3f4a8e8b8?q=60&w=1200&auto=format&fit=crop'
+      ],desc:'Two bedrooms + kitchenette.'}
+    ];
+
+    const roomsGrid = document.getElementById('roomsGrid');
+    const roomsCount = document.getElementById('roomsCount');
+    const priceVal = document.getElementById('priceVal');
+    const filterPrice = document.getElementById('filterPrice');
+
+    function renderRooms(list){
+      roomsGrid.innerHTML = '';
+      list.forEach(room => {
+        const card = document.createElement('div'); card.className='room-card';
+        card.innerHTML = `
+          <div class="room-media">
+            <img src="${room.images[0]}" alt="${room.name}">
+          </div>
+          <div class="room-body">
+            <div class="room-meta">
+              <div>
+                <div style="font-weight:700">${room.name}</div>
+                <div class="features">${room.type} · ${room.beds} bed(s)</div>
+              </div>
+              <div class="price">₹${room.price.toLocaleString()}</div>
+            </div>
+            <div style="flex:1;color:#475569">${room.desc}</div>
+            <div class="thumbs" data-room-id="${room.id}">
+              ${room.images.map((s,idx)=>`<img src="${s}" data-index="${idx}" alt="thumb">`).join('')}
+            </div>
+            <div class="room-actions">
+              <button class="btn-outline" data-action="enquire" data-id="${room.id}">Enquire</button>
+              <button class="btn" data-action="book" data-id="${room.id}">Book now</button>
+            </div>
+          </div>
+        `;
+        roomsGrid.appendChild(card);
+      });
+      roomsCount.textContent = list.length;
+    }
+
+    // Initial render
+    renderRooms(ROOMS);
+
+    // Filter behaviours
+    document.getElementById('applyFilters').addEventListener('click', ()=>{
+      const beds = document.getElementById('filterBeds').value;
+      const maxPrice = +document.getElementById('filterPrice').value;
+      const type = document.getElementById('filterType').value;
+      const filtered = ROOMS.filter(r=>{
+        if(beds!=='any' && r.beds!==+beds) return false;
+        if(type!=='any' && r.type!==type) return false;
+        if(r.price>maxPrice) return false;
+        return true;
+      });
+      renderRooms(filtered);
+    });
+    document.getElementById('resetFilters').addEventListener('click', ()=>{
+      document.getElementById('filterBeds').value='any';
+      document.getElementById('filterType').value='any';
+      document.getElementById('filterPrice').value=8000; priceVal.textContent='₹8000';
+      renderRooms(ROOMS);
+    });
+    filterPrice.addEventListener('input', ()=>{ priceVal.textContent = '₹'+(+filterPrice.value).toLocaleString();});
+
+    // Thumbs click -> change main image
+    roomsGrid.addEventListener('click', (e)=>{
+      const t = e.target;
+      if(t.tagName==='IMG' && t.parentElement.classList.contains('thumbs')){
+        const roomId = +t.parentElement.dataset.roomId;
+        const idx = +t.dataset.index;
+        // find main image in same card
+        const card = t.closest('.room-card');
+        const main = card.querySelector('.room-media img');
+        main.src = ROOMS.find(r=>r.id===roomId).images[idx];
+      }
+    });
+
+    // Booking modal logic
+    const modal = document.getElementById('modalBackdrop');
+    let selectedRoom = null;
+    roomsGrid.addEventListener('click', (e)=>{
+      const btn = e.target.closest('button'); if(!btn) return;
+      const action = btn.dataset.action;
+      const id = +btn.dataset.id;
+      if(action==='enquire' || action==='book'){
+        selectedRoom = ROOMS.find(r=>r.id===id);
+        document.getElementById('bookRoomName').textContent = selectedRoom.name + ' — ' + selectedRoom.type;
+        modal.style.display = 'flex';
+      }
+    });
+    document.getElementById('cancelBooking').addEventListener('click', ()=>{ modal.style.display='none'; });
+    document.getElementById('bookingForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      // UI-only: Show a success toast (alert)
+      alert('Enquiry sent for ' + selectedRoom.name + '. We will contact you soon.');
+      modal.style.display='none';
+      e.target.reset();
+    });
+
+    // Contact form UI-only
+    document.getElementById('contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Thanks — your enquiry has been received. We\'ll reply soon.');
+      e.target.reset();
+    });
+    document.getElementById('clearContact').addEventListener('click', ()=>{ document.getElementById('contactForm').reset(); });
+
+    // Search quick button (filter rooms by dates presence)
+    document.getElementById('searchBtn').addEventListener('click', ()=>{
+      const ci = document.getElementById('checkin').value;
+      const co = document.getElementById('checkout').value;
+      if(!ci || !co){ alert('Please pick check-in and check-out dates.'); return; }
+      // For demo: assume longer stays show more suites (toy example)
+      const days = (new Date(co)-new Date(ci))/(1000*60*60*24);
+      if(days>=3){ renderRooms(ROOMS.filter(r=>r.type!=='standard')); }
+      else renderRooms(ROOMS);
+    });
+
+    // Accessibility: close modal on escape
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') modal.style.display='none'; });
+
+  </script>
+</body>
+</html>
+</body>
+</html>
